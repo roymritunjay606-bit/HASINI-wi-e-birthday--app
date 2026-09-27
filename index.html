@@ -8,24 +8,162 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
 :root{--pink:#ff7da8;--rose:#ff3f76;--blue:#79a8ff;--violet:#9c6cff;--glass:rgba(255,255,255,.09);--line:rgba(255,255,255,.16)}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#05030b;color:#fff;font-family:Poppins,Arial,sans-serif}body{overflow:hidden}button,input,textarea{font:inherit}.screen{position:fixed;inset:0;display:none;overflow:auto}.screen.active{display:flex}.center{align-items:center;justify-content:center;text-align:center}.stars,.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden}.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.6;animation:twinkle 3s infinite}.petal{position:absolute;font-size:18px;animation:fall linear infinite;opacity:.7}
-/* lock */
-#lock{background:radial-gradient(circle at 50% 20%,#40317d 0,#17102d 35%,#05030b 75%)}.lock-card{width:min(92vw,390px);padding:30px 24px 26px;border-radius:38px;background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:0 25px 90px #0008,0 0 50px #7865ff44;backdrop-filter:blur(22px)}.lock-time{font-size:56px;font-weight:600;letter-spacing:2px}.date{opacity:.65;margin:-8px 0 22px}.lock-orb{font-size:62px;animation:float 3s ease-in-out infinite}.lock-card h1{font-family:'Cormorant Garamond',serif;font-size:34px;margin:10px 0 5px}.lock-card p{opacity:.72}.pw{width:100%;margin-top:16px;padding:16px;border:1px solid #ffffff25;border-radius:18px;background:#0005;color:#fff;text-align:center;letter-spacing:4px;outline:none}.pw:focus{border-color:#ff8bad;box-shadow:0 0 0 3px #ff7da822}.primary{border:0;border-radius:18px;padding:15px 20px;margin-top:13px;width:100%;color:#fff;font-weight:700;background:linear-gradient(90deg,var(--rose),var(--violet));box-shadow:0 12px 30px #ff3f7640;cursor:pointer}.error{height:25px;margin-top:10px;color:#ff9db8;font-size:13px}.shake{animation:shake .4s}
-/* world */
-#world{background:radial-gradient(circle at 50% 40%,#51264e 0,#180c27 32%,#06040c 72%)}.world-inner{width:100%;min-height:100%;position:relative;padding:35px 18px 90px;overflow:visible}.topline{text-align:center;position:relative;z-index:3}.eyebrow{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:99px;background:#fff1;font-size:12px}.title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,13vw,100px);line-height:.85;margin:22px 0 12px;background:linear-gradient(90deg,#ff9bbd,#fff,#8cb8ff);-webkit-background-clip:text;color:transparent}.subtitle{opacity:.72}.scene{position:relative;height:420px;max-width:760px;margin:10px auto 0;display:flex;align-items:center;justify-content:center;perspective:1000px}.halo{position:absolute;width:310px;height:310px;border-radius:50%;border:1px solid #fff2;box-shadow:0 0 90px #8b5cf655,inset 0 0 50px #ff5c9c22;animation:spin 18s linear infinite}.orb{position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff8,#fff0 22%),radial-gradient(circle at 60% 65%,#ff3f76,#7d2cff 65%,#181027);box-shadow:0 0 40px #ff477a,0 0 110px #7c4dff88;transform:translateZ(40px);animation:float 4s ease-in-out infinite}.orb:before{content:'❤️';position:absolute;inset:0;display:grid;place-items:center;font-size:70px;filter:drop-shadow(0 0 20px #fff)}.crystal-heart{position:absolute;width:155px;height:155px;transform:rotate(-45deg);border-radius:35px;background:linear-gradient(135deg,#ffb4ca,#ff315f 45%,#6f3cff);box-shadow:0 0 35px #ff3f76,0 0 100px #5d48ff99;cursor:pointer;border:0;transition:.7s;z-index:4}.crystal-heart:before,.crystal-heart:after{content:'';position:absolute;width:155px;height:155px;border-radius:50%;background:inherit}.crystal-heart:before{top:-77px;left:0}.crystal-heart:after{top:0;left:77px}.heart-core{position:absolute;z-index:5;transform:rotate(45deg);left:47px;top:57px;font-size:45px}.flower{position:absolute;font-size:64px;z-index:5;filter:drop-shadow(0 0 15px #ff6d9c);animation:float 3.5s ease-in-out infinite}.birthday-cake{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);z-index:6;font-size:58px;filter:drop-shadow(0 0 18px #ff9a4d);animation:float 3s ease-in-out infinite;cursor:pointer}.birthday-cake span{display:block;font-size:13px;text-align:center;letter-spacing:1px;margin-top:-8px;color:#ffd8e6;text-shadow:0 0 10px #ff5c9c}.cake-glow{position:absolute;left:50%;bottom:4%;width:150px;height:40px;transform:translateX(-50%);border-radius:50%;background:#ff7aa744;filter:blur(12px);z-index:5}.f1{left:6%;top:40%}.f2{right:6%;top:38%;animation-delay:1s}.f3{left:16%;bottom:8%;font-size:38px;animation-delay:.6s}.f4{right:16%;bottom:8%;font-size:38px;animation-delay:1.4s}.world-photo{position:absolute;top:30px;width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid #fff8;box-shadow:0 0 30px #79a8ff88;opacity:.9}.photo-left{left:12%}.photo-right{right:12%}.tap{text-align:center;opacity:.7;position:relative;z-index:4}.intro-card{max-width:720px;margin:25px auto;padding:28px 22px;border-radius:30px;background:#fff0a;border:1px solid var(--line);backdrop-filter:blur(18px);text-align:left;line-height:1.8}.intro-card h2{font-family:'Dancing Script',cursive;color:#ff9fbd;text-align:center;font-size:34px}.continue{display:block;width:100%;max-width:430px;margin:25px auto 0;border:0;border-radius:18px;padding:15px;color:#fff;font-weight:700;background:linear-gradient(90deg,#ff477e,#7657ff);cursor:pointer}
-/* pages */
-#questions{position:fixed;inset:0;display:none;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:radial-gradient(circle at 50% 30%,#351b3e,#08040e 72%)}#questions.active{display:block}.page{width:100%;min-height:100%;padding:35px 17px 80px;display:flex;justify-content:center}.page-inner{width:min(100%,760px);margin:auto}.page-head{text-align:center}.page-kicker{color:#ff9fbd;font-family:'Dancing Script',cursive;font-size:28px}.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,9vw,65px);margin:8px 0}.note{margin:20px 0;padding:20px;border-radius:24px;background:linear-gradient(135deg,#ff477e14,#6d55ff14);border:1px solid #fff2;text-align:center;line-height:1.7}.note b{color:#ff9fbd}.qcard{padding:21px;margin:16px 0;border-radius:24px;background:#fff0a;border:1px solid #fff2;backdrop-filter:blur(14px)}.qcard label{display:block;font-weight:600;line-height:1.5;margin-bottom:12px}.answer{width:100%;min-height:105px;resize:vertical;border:1px solid #fff2;border-radius:16px;background:#05030b88;color:#fff;padding:13px;outline:none}.answer:focus{border-color:#ff7da8}.progress{height:7px;background:#fff1;border-radius:9px;overflow:hidden;margin:20px 0}.progress i{display:block;height:100%;background:linear-gradient(90deg,#ff477e,#79a8ff);transition:.4s}.send{width:100%;padding:16px;border:0;border-radius:18px;background:linear-gradient(90deg,#ff477e,#8d58ff);color:#fff;font-weight:700;cursor:pointer;margin-top:8px}.send:disabled{opacity:.35;cursor:not-allowed}.small{font-size:12px;opacity:.58;text-align:center;margin-top:9px}.success{display:none;margin:14px 0;padding:14px;border-radius:16px;background:#59d98a18;border:1px solid #59d98a55;color:#b9ffd0;text-align:center}
-/* final */
-#final{background:radial-gradient(circle at 50% 40%,#4d214b,#09040f 70%);align-items:flex-start}.final-inner{width:min(94%,760px);text-align:center;padding:45px 18px}.ring{font-size:90px;filter:drop-shadow(0 0 30px #ffd76a);animation:pulse 2s infinite}.forever{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,11vw,86px);background:linear-gradient(90deg,#ff91b5,#fff,#8cbcff);-webkit-background-clip:text;color:transparent}.choice-note{padding:16px;border-radius:20px;background:#fff1;border:1px solid #fff2;margin:20px 0;line-height:1.7}.choices{display:grid;gap:12px;margin-top:20px}.choice{border:1px solid #fff3;border-radius:18px;padding:15px;background:#fff1;color:#fff;cursor:pointer;font-weight:600}.choice.yes{background:linear-gradient(90deg,#ff477e,#8d58ff);border:0}.choice.no{position:relative}.final-message{display:none;margin-top:25px;padding:25px;border-radius:26px;background:#fff0a;border:1px solid #fff2;line-height:1.8;text-align:left}.replay{display:none;margin-top:20px;border:1px solid #fff3;background:#fff1;color:#fff;border-radius:16px;padding:13px 20px;cursor:pointer}.send-status{margin-top:12px;font-size:12px;opacity:.65}
-.final-question{margin:28px 0 10px;padding:24px;border-radius:26px;background:linear-gradient(135deg,#ff477e22,#8d58ff22);border:1px solid #fff3;text-align:center;box-shadow:0 0 35px #ff477e18}.final-question h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,7vw,52px);margin:10px 0;line-height:1.15}
-/* effects */
-.glow{position:fixed;width:260px;height:260px;border-radius:50%;background:#ff477e15;filter:blur(40px);pointer-events:none}.g1{top:15%;left:-100px}.g2{bottom:5%;right:-100px;background:#588dff15}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:1}}@keyframes fall{from{transform:translate3d(0,-10vh,0) rotate(0)}to{transform:translate3d(80px,110vh,0) rotate(360deg)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-12px)}75%{transform:translateX(12px)}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-@media(max-width:520px){.scene{height:350px}.orb{width:180px;height:180px}.crystal-heart,.crystal-heart:before,.crystal-heart:after{width:130px;height:130px}.crystal-heart:before{top:-65px}.crystal-heart:after{left:65px}.heart-core{left:38px;top:45px;font-size:38px}.flower{font-size:50px}.world-photo{width:68px;height:68px}.photo-left{left:3%}.photo-right{right:3%}.f1{left:0}.f2{right:0}}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#05030b;color:#fff;font-family:Poppins,Arial,sans-serif}
+body{overflow:hidden}
+button,input,textarea{font:inherit}
+.screen{position:fixed;inset:0;display:none;overflow:auto;-webkit-overflow-scrolling:touch}
+.screen.active{display:flex}
+.center{align-items:center;justify-content:center;text-align:center}
+.stars,.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.6;animation:twinkle 3s infinite}
+.petal{position:absolute;font-size:18px;animation:fall linear infinite;opacity:.7}
+#lock{background:radial-gradient(circle at 50% 20%,#40317d 0,#17102d 35%,#05030b 75%);z-index:2}
+.lock-card{width:min(92vw,390px);padding:30px 24px 26px;border-radius:38px;background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:0 25px 90px #0008,0 0 50px #7865ff44;backdrop-filter:blur(22px)}
+.lock-time{font-size:56px;font-weight:600;letter-spacing:2px}
+.date{opacity:.65;margin:-8px 0 22px}
+.lock-orb{font-size:62px;animation:float 3s ease-in-out infinite}
+.lock-card h1{font-family:'Cormorant Garamond',serif;font-size:34px;margin:10px 0 5px}
+.lock-card p{opacity:.72}
+.pw{width:100%;margin-top:16px;padding:16px;border:1px solid #ffffff25;border-radius:18px;background:#0005;color:#fff;text-align:center;letter-spacing:4px;outline:none}
+.pw:focus{border-color:#ff8bad;box-shadow:0 0 0 3px #ff7da822}
+.primary{border:0;border-radius:18px;padding:15px 20px;margin-top:13px;width:100%;color:#fff;font-weight:700;background:linear-gradient(90deg,var(--rose),var(--violet));box-shadow:0 12px 30px #ff3f7640;cursor:pointer}
+.error{height:25px;margin-top:10px;color:#ff9db8;font-size:13px}
+.shake{animation:shake .4s}
+#world{background:radial-gradient(circle at 50% 40%,#51264e 0,#180c27 32%,#06040c 72%);z-index:2}
+.world-inner{width:100%;min-height:100%;position:relative;padding:35px 18px 90px;overflow:visible}
+.topline{text-align:center;position:relative;z-index:3}
+.eyebrow{display:inline-block;padding:8px 15px;border:1px solid var(--line);border-radius:99px;background:#fff1;font-size:12px}
+.title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,13vw,100px);line-height:.85;margin:22px 0 12px;background:linear-gradient(90deg,#ff9bbd,#fff,#8cb8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{opacity:.72}
+.scene{position:relative;height:420px;max-width:760px;margin:10px auto 0;display:flex;align-items:center;justify-content:center;perspective:1000px}
+.halo{position:absolute;width:310px;height:310px;border-radius:50%;border:1px solid #fff2;box-shadow:0 0 90px #8b5cf655,inset 0 0 50px #ff5c9c22;animation:spin 18s linear infinite}
+.orb{position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff8,#fff0 22%),radial-gradient(circle at 60% 65%,#ff3f76,#7d2cff 65%,#181027);box-shadow:0 0 40px #ff477a,0 0 110px #7c4dff88;transform:translateZ(40px);animation:float 4s ease-in-out infinite}
+.orb:before{content:'❤️';position:absolute;inset:0;display:grid;place-items:center;font-size:70px;filter:drop-shadow(0 0 20px #fff)}
+.crystal-heart{position:absolute;width:155px;height:155px;transform:rotate(-45deg);border-radius:35px;background:linear-gradient(135deg,#ffb4ca,#ff315f 45%,#6f3cff);box-shadow:0 0 35px #ff3f76,0 0 100px #5d48ff99;cursor:pointer;border:0;transition:.7s;z-index:4}
+.crystal-heart:before,.crystal-heart:after{content:'';position:absolute;width:155px;height:155px;border-radius:50%;background:inherit}
+.crystal-heart:before{top:-77px;left:0}
+.crystal-heart:after{top:0;left:77px}
+.heart-core{position:absolute;z-index:5;transform:rotate(45deg);left:47px;top:57px;font-size:45px}
+.flower{position:absolute;font-size:64px;z-index:5;filter:drop-shadow(0 0 15px #ff6d9c);animation:float 3.5s ease-in-out infinite}
+.birthday-cake{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);z-index:6;font-size:58px;filter:drop-shadow(0 0 18px #ff9a4d);animation:float 3s ease-in-out infinite;cursor:pointer}
+.birthday-cake span{display:block;font-size:13px;text-align:center;letter-spacing:1px;margin-top:-8px;color:#ffd8e6;text-shadow:0 0 10px #ff5c9c}
+.cake-glow{position:absolute;left:50%;bottom:4%;width:150px;height:40px;transform:translateX(-50%);border-radius:50%;background:#ff7aa744;filter:blur(12px);z-index:5}
+.f1{left:6%;top:40%}
+.f2{right:6%;top:38%;animation-delay:1s}
+.f3{left:16%;bottom:8%;font-size:38px;animation-delay:.6s}
+.f4{right:16%;bottom:8%;font-size:38px;animation-delay:1.4s}
+.world-photo{position:absolute;top:30px;width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid #fff8;box-shadow:0 0 30px #79a8ff88;opacity:.9;cursor:pointer;background:#21152d}
+.photo-left{left:12%}
+.photo-right{right:12%}
+.tap{text-align:center;opacity:.7;position:relative;z-index:4}
+.intro-card{max-width:720px;margin:25px auto;padding:28px 22px;border-radius:30px;background:#fff0a;border:1px solid var(--line);backdrop-filter:blur(18px);text-align:left;line-height:1.8}
+.intro-card h2{font-family:'Dancing Script',cursive;color:#ff9fbd;text-align:center;font-size:34px}
+.continue{display:block;width:100%;max-width:430px;margin:25px auto 0;border:0;border-radius:18px;padding:15px;color:#fff;font-weight:700;background:linear-gradient(90deg,#ff477e,#7657ff);cursor:pointer}
+.ghost-btn{display:inline-block;margin:14px 6px 0;padding:12px 20px;border:1px solid #fff3;border-radius:16px;background:#fff1;color:#fff;cursor:pointer;font-weight:600}
+#questions{position:fixed;inset:0;display:none;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:radial-gradient(circle at 50% 30%,#351b3e,#08040e 72%);z-index:2}
+#questions.active{display:block}
+.page{width:100%;min-height:100%;padding:35px 17px 80px;display:flex;justify-content:center}
+.page-inner{width:min(100%,760px);margin:auto}
+.page-head{text-align:center}
+.page-kicker{color:#ff9fbd;font-family:'Dancing Script',cursive;font-size:28px}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,9vw,65px);margin:8px 0}
+.note{margin:20px 0;padding:20px;border-radius:24px;background:linear-gradient(135deg,#ff477e14,#6d55ff14);border:1px solid #fff2;text-align:center;line-height:1.7}
+.note b{color:#ff9fbd}
+.qcard{padding:21px;margin:16px 0;border-radius:24px;background:#fff0a;border:1px solid #fff2;backdrop-filter:blur(14px)}
+.qcard label{display:block;font-weight:600;line-height:1.5;margin-bottom:12px}
+.answer{width:100%;min-height:105px;resize:vertical;border:1px solid #fff2;border-radius:16px;background:#05030b88;color:#fff;padding:13px;outline:none}
+.answer:focus{border-color:#ff7da8}
+.progress{height:7px;background:#fff1;border-radius:9px;overflow:hidden;margin:20px 0}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,#ff477e,#79a8ff);transition:.4s}
+.send{width:100%;padding:16px;border:0;border-radius:18px;background:linear-gradient(90deg,#ff477e,#8d58ff);color:#fff;font-weight:700;cursor:pointer;margin-top:8px}
+.send:disabled{opacity:.35;cursor:not-allowed}
+.small{font-size:12px;opacity:.58;text-align:center;margin-top:9px}
+.success{display:none;margin:14px 0;padding:14px;border-radius:16px;background:#59d98a18;border:1px solid #59d98a55;color:#b9ffd0;text-align:center}
+#final{background:radial-gradient(circle at 50% 40%,#4d214b,#09040f 70%);align-items:flex-start;z-index:2}
+.final-inner{width:min(94%,760px);text-align:center;padding:45px 18px}
+.ring{font-size:90px;filter:drop-shadow(0 0 30px #ffd76a);animation:pulse 2s infinite}
+.forever{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,11vw,86px);background:linear-gradient(90deg,#ff91b5,#fff,#8cbcff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.choice-note{padding:16px;border-radius:20px;background:#fff1;border:1px solid #fff2;margin:20px 0;line-height:1.7}
+.choices{display:grid;gap:12px;margin-top:20px}
+.choice{border:1px solid #fff3;border-radius:18px;padding:15px;background:#fff1;color:#fff;cursor:pointer;font-weight:600}
+.choice.yes{background:linear-gradient(90deg,#ff477e,#8d58ff);border:0}
+.choice.no{position:relative}
+.final-message{margin-top:25px;padding:25px;border-radius:26px;background:#fff0a;border:1px solid #fff2;line-height:1.8;text-align:left}
+.replay{display:none;margin-top:20px;border:1px solid #fff3;background:#fff1;color:#fff;border-radius:16px;padding:13px 20px;cursor:pointer}
+.send-status{margin-top:12px;font-size:12px;opacity:.65}
+.final-question{margin:28px 0 10px;padding:24px;border-radius:26px;background:linear-gradient(135deg,#ff477e22,#8d58ff22);border:1px solid #fff3;text-align:center;box-shadow:0 0 35px #ff477e18}
+.final-question h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,7vw,52px);margin:10px 0;line-height:1.15}
+#forever{align-items:flex-start!important;justify-content:center!important;overflow-y:auto!important;overflow-x:hidden!important;z-index:2}
+.forever-inner{width:min(94%,760px);padding:28px 18px 80px;text-align:center;min-height:100%}
+.forever-kicker{font-family:'Dancing Script',cursive;color:#ff9fbd;font-size:30px}
+.forever-inner h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,12vw,88px);margin:8px 0 24px;background:linear-gradient(90deg,#ff91b5,#fff,#8cbcff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.forever-photo{width:min(82vw,330px);height:min(82vw,330px);margin:0 auto 22px;border-radius:36px;padding:6px;background:linear-gradient(135deg,#ff477e,#8d58ff,#79a8ff);box-shadow:0 0 55px #ff477e55;cursor:pointer}
+.photo-placeholder{width:100%;height:100%;border-radius:31px;background:radial-gradient(circle at 50% 25%,#6b2850,#140a1d 72%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:70px;box-shadow:inset 0 0 35px #ff477e22;overflow:hidden;background-size:cover;background-position:center}
+.photo-placeholder .photo-icon{font-size:68px;filter:drop-shadow(0 0 16px #ff8fb5);margin-bottom:8px}
+.photo-placeholder strong{font-family:'Cormorant Garamond',serif;font-size:28px;letter-spacing:3px;color:#fff}
+.photo-placeholder span{font-family:'Dancing Script',cursive;font-size:24px;color:#ffd7e5;margin-top:8px}
+.photo-placeholder.has-img .photo-icon,.photo-placeholder.has-img strong,.photo-placeholder.has-img span{display:none}
+.forever-cake{font-size:64px;filter:drop-shadow(0 0 18px #ff9a4d);margin:4px 0 22px}
+.forever-cake span{display:block;font-size:13px;color:#ffd8e6;margin-top:-6px}
+.forever-note{padding:28px 22px;border-radius:30px;background:linear-gradient(135deg,#ff477e14,#8d58ff14);border:1px solid #fff2;backdrop-filter:blur(16px);line-height:1.8;text-align:left;box-shadow:0 20px 70px #0005}
+.forever-note h2{font-family:'Dancing Script',cursive;color:#ff9fbd;text-align:center;font-size:34px;margin-top:0}
+.forever-note p:last-child{text-align:center;font-size:20px}
+.forever-inner .continue{margin-top:24px}
+#gallery{background:radial-gradient(circle at 50% 30%,#3b1a3d,#07040d 72%);align-items:flex-start;z-index:2}
+.gallery-inner{width:min(96%,820px);margin:auto;padding:38px 16px 80px;text-align:center}
+.gallery-kicker{font-family:'Dancing Script',cursive;color:#ff9fbd;font-size:26px}
+.gallery-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,10vw,72px);margin:6px 0 4px;background:linear-gradient(90deg,#ff91b5,#fff,#8cbcff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gallery-sub{opacity:.7;font-family:'Dancing Script',cursive;font-size:24px;color:#ffd7e5;margin-bottom:20px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.gallery-grid .gslot{position:relative;aspect-ratio:1/1;border-radius:16px;background:linear-gradient(135deg,#2a1430,#14081c);border:1px dashed #ffffff2a;display:grid;place-items:center;cursor:pointer;overflow:hidden;background-size:cover;background-position:center;transition:.35s}
+.gallery-grid .gslot:active{transform:scale(.96)}
+.gallery-grid .gslot .plus{font-size:32px;color:#ffb8d4;opacity:.75}
+.gallery-grid .gslot .del{position:absolute;top:4px;right:4px;width:24px;height:24px;border-radius:50%;background:#000a;border:1px solid #fff3;color:#fff;font-size:12px;display:none;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.gallery-grid .gslot.has-img .plus{display:none}
+.gallery-grid .gslot.has-img .del{display:flex}
+.gallery-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.gallery-actions .ghost-btn{margin:0}
+#lightbox{position:fixed;inset:0;background:#000c;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+#lightbox.active{display:flex}
+#lightbox img{max-width:96vw;max-height:82vh;border-radius:18px;box-shadow:0 30px 90px #000c,0 0 60px #ff477e55}
+.lb-close{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;background:#ffffff14;border:1px solid #fff3;color:#fff;font-size:22px;cursor:pointer}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:#ffffff14;border:1px solid #fff3;color:#fff;font-size:22px;cursor:pointer}
+.lb-prev{left:10px}
+.lb-next{right:10px}
+.glow{position:fixed;width:260px;height:260px;border-radius:50%;background:#ff477e15;filter:blur(40px);pointer-events:none;z-index:0}
+.g1{top:15%;left:-100px}
+.g2{bottom:5%;right:-100px;background:#588dff15}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:1}}
+@keyframes fall{from{transform:translate3d(0,-10vh,0) rotate(0)}to{transform:translate3d(80px,110vh,0) rotate(360deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-12px)}75%{transform:translateX(12px)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@media(max-width:520px){
+  .scene{height:350px}
+  .orb{width:180px;height:180px}
+  .crystal-heart,.crystal-heart:before,.crystal-heart:after{width:130px;height:130px}
+  .crystal-heart:before{top:-65px}
+  .crystal-heart:after{left:65px}
+  .heart-core{left:38px;top:45px;font-size:38px}
+  .flower{font-size:50px}
+  .world-photo{width:68px;height:68px}
+  .photo-left{left:3%}
+  .photo-right{right:3%}
+  .f1{left:0}
+  .f2{right:0}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
-<div class="glow g1"></div><div class="glow g2"></div><div class="stars" id="stars"></div><div class="petals" id="petals"></div>
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+<div class="stars" id="stars"></div>
+<div class="petals" id="petals"></div>
+
+<audio id="song" src="song.mp3" loop preload="none"></audio>
 
 <section id="lock" class="screen active center">
   <div class="lock-card" id="lockCard">
@@ -34,178 +172,163 @@
     <div class="date" id="today"></div>
     <h1>Our Little World ❤️</h1>
     <p>A little secret is waiting for you...</p>
-    <form id="unlockForm" autocomplete="off">
+    <form id="unlockForm" autocomplete="off" onsubmit="return false;">
       <input id="password" class="pw" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter the secret date 🌹">
-      <button class="primary" id="unlock" type="submit">Unlock My Heart ❤️</button>
+      <button class="primary" id="unlock" type="button">Unlock My Heart ❤️</button>
     </form>
     <div class="error" id="error"></div>
   </div>
 </section>
 
 <section id="world" class="screen">
- <div class="world-inner">
-  <div class="topline">
-   <span class="eyebrow">💌 Made especially for you</span>
-   <h1 class="title">My Bangaram</h1>
-   <p class="subtitle">Welcome to our little world… 🌍❤️</p>
+  <div class="world-inner">
+    <div class="topline">
+      <span class="eyebrow">💌 Made especially for you</span>
+      <h1 class="title">My Bangaram</h1>
+      <p class="subtitle">Welcome to our little world… 🌍❤️</p>
+    </div>
+    <div class="scene" id="scene">
+      <div class="halo"></div>
+      <div class="orb"></div>
+      <img id="photoA" class="world-photo photo-left" style="display:none" src="her-photo.jpg" alt="Her">
+      <img id="photoB" class="world-photo photo-right" style="display:none" src="her-photo.jpg" alt="Her">
+      <div class="flower f1">🌹</div>
+      <div class="flower f2">🌹</div>
+      <div class="flower f3">🌸</div>
+      <div class="flower f4">🌷</div>
+      <div class="cake-glow"></div>
+      <div class="birthday-cake">🎂🍫<span>Make a wish ❤️</span></div>
+      <button class="crystal-heart" id="openHeart"><span class="heart-core">❤️</span></button>
+    </div>
+    <div class="tap">Tap the heart… 🥹❤️</div>
+
+    <div class="intro-card" id="intro" style="display:none">
+      <h2>Happy Birthday, My Love ❤️🎂</h2>
+      <p>Today isn't just another day. It's one of the most precious days for me, because it's the day <b>you were born</b>. And honestly, I don't think I'll ever be able to explain completely how much your existence means to me.</p>
+      <p>Some people come into our lives and become a part of our memories. But somehow, you became a part of my heart, my happiness, my everyday thoughts, and my little world. 🌍❤️</p>
+      <p>I love your smile, your laugh, the way you talk, your little habits, your silly moments, and even the times when you annoy me 😂❤️.</p>
+      <p><b>I will still choose you.</b> Not because I have no other option, but because even if life gave me a thousand choices, my heart would still look for <b>you</b>.</p>
+      <p><b>I don't want someone like you. I don't want someone better than you. I just want you. Exactly you.</b> ❤️</p>
+      <p>Your imperfect days, happy days, quiet days, crazy days, silly side and serious side—every version of you is someone I want to know, understand and care about.</p>
+      <p>I want more random conversations, more stupid jokes 😂, more laughter and more little memories that become our favourite memories later.</p>
+      <p>And selfishly… I hope I get to be a part of that journey. ❤️</p>
+      <p><b>You are my favourite person, my future, my happiness, my comfort, my beautiful memory, and my world.</b> 🌍❤️</p>
+      <p>I'm genuinely grateful that you exist. If I get to choose, I'll keep choosing you. ❤️</p>
+      <p style="text-align:center"><b>Happy 16th Birthday, My Love. ❤️🎂🌹</b></p>
+      <p>And please keep that beautiful smile forever… because when you smile, my whole world feels a little brighter. 🌍💖</p>
+      <p style="text-align:center"><b>Happy Birthday, Bangaram. 🫶🏻❤️</b></p>
+      <p style="text-align:center"><b>You aren't just a part of my world. You are the reason my world feels so beautiful. ❤️</b></p>
+      <button class="continue" id="toQ1">Continue to your little questions 💌</button>
+    </div>
   </div>
-  <div class="scene" id="scene">
-   <div class="halo"></div><div class="orb"></div>
-   <img id="photoA" class="world-photo photo-left" alt="Your photo">
-   <img id="photoB" class="world-photo photo-right" alt="Your photo">
-   <div class="flower f1">🌹</div><div class="flower f2">🌹</div><div class="flower f3">🌸</div><div class="flower f4">🌷</div><div class="cake-glow"></div><div class="birthday-cake" aria-label="Chocolate birthday cake">🎂🍫<span>Make a wish ❤️</span></div>
-   <button class="crystal-heart" id="openHeart" aria-label="Open heart"><span class="heart-core">❤️</span></button>
-  </div>
-  <div class="tap">Tap the heart… 🥹❤️</div>
-  <div class="intro-card" id="intro" style="display:none">
-    <h2>Happy Birthday, My Love ❤️🎂</h2>
-    <p>Today isn't just another day. It’s one of the most precious days for me, because it’s the day <b>you were born</b>. And honestly, I don't think I'll ever be able to explain completely how much your existence means to me.</p>
-    <p>Some people come into our lives and become a part of our memories. But somehow, you became a part of my heart, my happiness, my everyday thoughts, and my little world. 🌍❤️</p>
-    <p>I love your smile, your laugh, the way you talk, your little habits, your silly moments, and even the times when you annoy me 😂❤️.</p>
-    <p><b>I will still choose you.</b> Not because I have no other option, but because even if life gave me a thousand choices, my heart would still look for <b>you</b>.</p>
-    <p><b>I don't want someone like you. I don't want someone better than you. I just want you. Exactly you.</b> ❤️</p>
-    <p>Your imperfect days, happy days, quiet days, crazy days, silly side and serious side—every version of you is someone I want to know, understand and care about.</p>
-    <p>I want more random conversations, more stupid jokes 😂, more laughter and more little memories that become our favourite memories later.</p>
-    <p>And selfishly… I hope I get to be a part of that journey. ❤️</p>
-    <p><b>You are my favourite person, my future, my happiness, my comfort, my beautiful memory, and my world.</b> 🌍❤️</p>
-    <p>I'm genuinely grateful that you exist. If I get to choose, I'll keep choosing you. ❤️</p>
-    <p style="text-align:center"><b>Happy 16th Birthday, My Love. ❤️🎂🌹</b></p>
-    <p>And please keep that beautiful smile forever… because when you smile, my whole world feels a little brighter. 🌍💖</p>
-    <p style="text-align:center"><b>Happy Birthday, Bangaram. 🫶🏻❤️</b></p>
-    <p style="text-align:center"><b>You aren't just a part of my world. You are the reason my world feels so beautiful. ❤️</b></p>
-    <button class="continue" id="toQ1">Continue to your little questions 💌</button>
-  </div>
- </div>
 </section>
 
 <div id="questions"></div>
 
 <section id="final" class="screen center">
- <div class="final-inner">
-  <div class="ring">💍</div>
-  <h1 class="forever">Our Forever Begins…</h1>
-  <div class="final-message" id="finalMessage" style="display:block">
-   <p><b>And finally… ❤️</b></p>
-   <p>Thank you for answering everything and letting me see a little more of your heart. 🥹</p>
-   <p>I don't know what the future holds, but I know one thing—</p>
-   <p><b>No matter how difficult life gets, I'd still choose you.</b></p>
-   <p>Not because you're my only option, but because even with a thousand choices, I'd still want you. ❤️</p>
-   <p>I don't want someone like you.<br>I don't want someone better than you.</p>
-   <p><b>I just want you. Exactly you.</b> 🫶🏻</p>
-   <p>Thank you for being a part of my life, for every laugh, every memory, and every little moment.</p>
-   <p>Keep smiling, keep dreaming, and never forget how special you are to me.</p>
-   <p>You aren't just a part of my world…<br><b>You are my world. 🌍❤️</b></p>
-   <p>Happy Birthday once again, My Love. 🎂🌹</p>
-   <p>I love you. ❤️</p>
+  <div class="final-inner">
+    <div class="ring">💍</div>
+    <h1 class="forever">One Last Thing…</h1>
+    <div class="final-message" id="finalMessage">
+      <p><b>And finally… ❤️</b></p>
+      <p>Thank you for answering everything and letting me see a little more of your heart. 🥹</p>
+      <p>I don't know what the future holds, but I know one thing—</p>
+      <p><b>No matter how difficult life gets, I'd still choose you.</b></p>
+      <p>Not because you're my only option, but because even with a thousand choices, I'd still want you. ❤️</p>
+      <p>I don't want someone like you.<br>I don't want someone better than you.</p>
+      <p><b>I just want you. Exactly you.</b> 🫶🏻</p>
+      <p>Thank you for being a part of my life, for every laugh, every memory, and every little moment.</p>
+      <p>Keep smiling, keep dreaming, and never forget how special you are to me.</p>
+      <p>You aren't just a part of my world…<br><b>You are my world. 🌍❤️</b></p>
+      <p>Happy Birthday once again, My Love. 🎂🌹</p>
+      <p>I love you. ❤️</p>
+    </div>
+    <div class="final-question" id="finalQuestion">
+      <p><b>So I have one little question left… ❤️</b></p>
+      <h2>Can you spend the rest of your life with me? ❤️🌍</h2>
+      <p>Can we keep making memories, laughing at stupid things, annoying each other, supporting each other's dreams, and choosing each other through whatever life brings?</p>
+      <p>I don't need a perfect future. I just hope you're somewhere in mine. ❤️</p>
+    </div>
+    <div class="choice-note"><b>Choose honestly… your answer will be sent to me. ❤️</b><br>One little answer… and I'll know what's in your heart. 🥹❤️</div>
+    <div class="choices" id="choices">
+      <button class="choice yes" data-choice="Yeah, sure ❤️">Yeah, sure ❤️</button>
+      <button class="choice no" id="noBtn">No, never 💔</button>
+    </div>
+    <div class="send-status" id="finalStatus"></div>
+    <button class="replay" id="replay">Replay our birthday journey 🔁❤️</button>
   </div>
-  <div class="final-question" id="finalQuestion">
-   <p><b>So I have one little question left… ❤️</b></p>
-   <h2>Can you spend the rest of your life with me? ❤️🌍</h2>
-   <p>Can we keep making memories, laughing at stupid things, annoying each other, supporting each other's dreams, and choosing each other through whatever life brings?</p>
-   <p>I don't need a perfect future. I just hope you're somewhere in mine. ❤️</p>
-  </div>
-  <div class="choice-note"><b>Choose honestly… your answer will be sent to me. ❤️</b><br>One little answer… and I'll know what's in your heart. 🥹❤️</div>
-  <div class="choices" id="choices">
-   <button class="choice yes" data-choice="Yeah, sure ❤️">Yeah, sure ❤️</button>
-   <button class="choice no" id="noBtn">No, never 💔</button>
-  </div>
-  <div class="send-status" id="finalStatus"></div>
-  <button class="replay" id="replay">Replay our birthday journey 🔁❤️</button>
- </div>
 </section>
 
+<section id="forever" class="screen center">
+  <div class="forever-inner">
+    <div class="forever-kicker">💖 FOR MY BANGARAM ❤️</div>
+    <h1>Our Forever Begins…</h1>
+    <div class="forever-photo" id="foreverPhoto">
+      <div class="photo-placeholder has-img" id="foreverPlaceholder" style="background-image:url('her-photo.jpg');">
+        <div class="photo-icon">📸</div>
+        <strong>HER PHOTO</strong>
+        <span>Your beautiful photo will be here ❤️</span>
+      </div>
+    </div>
+    <div class="forever-cake">🎂🍫<span>Make a wish, birthday girl ❤️</span></div>
+    <div class="forever-note">
+      <h2>A Little Birthday Note 💌</h2>
+      <p>My Love, ❤️</p>
+      <p>Today is your special day, but somehow you have become one of the most special parts of my world.</p>
+      <p>I hope this little surprise reminds you how precious you are to me. Keep smiling, keep dreaming, and keep being exactly who you are. 🫶🏻</p>
+      <p>Whatever the future brings, I will always be grateful for every laugh, every memory, and every little moment we shared.</p>
+      <p><b>Happy 16th Birthday, Bangaram. 🎂🌹❤️</b></p>
+      <p><b>You are my world. 🌍❤️</b></p>
+    </div>
+    <button class="ghost-btn" id="toGalleryFromForever">📸 Our Memory Gallery</button>
+    <button class="continue" id="replayForever">Replay Our Birthday Journey ❤️</button>
+  </div>
+</section>
+
+<section id="gallery" class="screen">
+  <div class="gallery-inner">
+    <div class="gallery-kicker">📸 OUR MEMORIES</div>
+    <h1 class="gallery-title">Little Moments, Forever Us</h1>
+    <p class="gallery-sub">every photo is a piece of my heart ❤️</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-actions">
+      <button class="ghost-btn" id="addManyPhotos">➕ Add photos</button>
+      <button class="ghost-btn" id="slideshowBtn">▶️ Slideshow</button>
+      <button class="ghost-btn" id="backFromGallery">← Back</button>
+    </div>
+    <p class="small" style="margin-top:18px;opacity:.55">Tap a photo to view full-screen. Tap ✕ to remove.</p>
+  </div>
+</section>
+
+<div id="lightbox">
+  <button class="lb-close" id="lbClose">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev">‹</button>
+  <button class="lb-nav lb-next" id="lbNext">›</button>
+  <img id="lbImg" alt="">
+</div>
 <script>
 const PASSWORD='19082026';
-// Accepted formats: 19/08/2026, 19-08-2026, 19 08 2026, or 19082026.
+const IS_FILE = location.protocol === 'file:';
 
 const pages=[
- {message:`Happy Birthday, My Love ❤️🎂
+  {
+    message:`Before I ask you anything, I just want to say — you are the most precious part of my world. 🌍❤️
 
-Today isn't just another day. It’s one of the most precious days for me, because it’s the day you were born. And honestly, I don't think I'll ever be able to explain completely how much your existence means to me.
+I have a few little questions for you. Not to test you. Not to quiz you. Just because I genuinely want to know what's in your heart.
 
-Some people come into our lives and become a part of our memories. But somehow, you became a part of my heart, my happiness, my everyday thoughts, and my little world. 🌍❤️
+Take your time. There's no rush. This little world isn't going anywhere. ❤️`,
+    qs:[
+      'What is the first thing about me that comes to your mind when you hear the words "My Love"? ❤️',
+      'Which memory of us makes you smile every time you think about it? 🥹',
+      'What is one little thing I do that you secretly love or find cute? 🫶🏻',
+      'When I say "I will still choose you," what does that mean to you? ❤️',
+      'If you could keep one moment from our time together forever, which moment would you choose and why? 🌍💖'
+    ]
+  },
+  {
+    message:`You made it to the end, My Love. ❤️🌍
 
-I love your smile, your laugh, the way you talk, your little habits, your silly moments, and even the times when you annoy me 😂❤️. I love the little things about you that you probably don't even realise I notice.
-
-And if life ever becomes difficult, I want you to remember this:
-
-I will still choose you.
-
-Not because I have no other option. Not because you're the only person in the world. But because even if life gave me a thousand choices, my heart would still look for you.
-
-It's never you versus someone else for me.
-
-It's you.
-
-I don't want someone like you.
-I don't want someone better than you.
-I don't want a replacement for you.
-
-I want you. Exactly you. ❤️
-
-Your imperfect days, your happy days, your quiet days, your crazy days, your silly side, your serious side—every version of you is someone I want to know, understand, and care about.
-
-I don't promise that life will always be easy. There may be days when we misunderstand each other, days when things don't go the way we want, and days when everything feels difficult.
-
-But if those days ever come, I hope we remember why we cared about each other in the first place. Because for me, you're not someone I want only when everything is perfect.
-
-You're someone I want to choose even when things aren't perfect. 🫶🏻
-
-I want to be there for your happiest moments, but I also want to be there on the days when you don't feel okay. I want to see you achieve your dreams, watch you grow into the person you want to become, celebrate your victories, and remind you how proud I am of you.
-
-I want more memories with you.
-
-More random conversations.
-More stupid jokes. 😂
-More laughing over things nobody else understands.
-More moments that seem ordinary now but become our favourite memories later.
-
-And maybe one day we'll look back at all of this and realise how many beautiful little moments we created together. ❤️
-
-On your birthday, I don't wish for you to have a perfect life.
-
-I wish you a life where your dreams slowly become reality. Where you never lose your beautiful smile. Where you meet people who genuinely value you. Where you have the courage to chase what you want. And whenever life knocks you down, I hope you always find the strength to stand back up.
-
-And selfishly… I hope I get to be a part of that journey. ❤️
-
-You are more than just someone special to me.
-
-You are my favourite person, my future, my happiness, my comfort, my beautiful memory, and my world. 🌍❤️
-
-I'm genuinely grateful that you exist.
-
-Grateful that I know you.
-Grateful for every conversation.
-Grateful for every laugh.
-Grateful for every little memory.
-And grateful for every moment that somehow brought you into my life.
-
-I don't know what the future will look like, but I know one thing—
-
-If I get to choose, I'll keep choosing you. ❤️
-
-So today, I just want you to smile, enjoy your day, and remember how loved and special you are.
-
-Happy 16th Birthday, My Love. ❤️🎂🌹
-
-May every wish you make today find its way to you.
-
-And please keep that beautiful smile forever…
-
-Because you probably don't realise it, but when you smile, my whole world feels a little brighter. 🌍💖
-
-Happy Birthday, Bangaram. 🫶🏻❤️
-
-You aren't just a part of my world.
-You are the reason my world feels so beautiful. ❤️`, qs:[
-  'What is the first thing about me that comes to your mind when you hear the words “My Love”? ❤️',
-  'Which memory of us makes you smile every time you think about it? 🥹',
-  'What is one little thing I do that you secretly love or find cute? 🫶🏻',
-  'When I say “I will still choose you,” what does that mean to you? ❤️',
-  'If you could keep one moment from our time together forever, which moment would you choose and why? 🌍💖']},
- {message:`You made it to the end, My Love. ❤️🌍
-
-So… now that I know a little more about what’s in your heart, I just want to tell you one more thing.
+So… now that I know a little more about what's in your heart, I just want to tell you one more thing.
 
 Thank you for answering my questions and for letting me see a little piece of your heart. 🥹❤️
 
@@ -253,72 +376,380 @@ You are my world. 🌍❤️
 
 Happy Birthday once again, Bangaram. 🎂🌹
 
-I love you more than these words can ever explain. ❤️`, qs:[
-  'After everything we have shared, what do you think makes our bond special? 🌍❤️',
-  'What is one thing you hope will never change between us, no matter how much life changes? 🫶🏻',
-  'If we could create one completely new memory together someday, what would you want it to be? ✨',
-  'When you imagine us looking back on this birthday years from now, what do you hope we remember most? 🎂🥹',
-  'If you could tell me one honest thing about what I mean to you, without worrying about being shy, what would you say? ❤️']}
+I love you more than these words can ever explain. ❤️`,
+    qs:[
+      'After everything we have shared, what do you think makes our bond special? 🌍❤️',
+      'What is one thing you hope will never change between us, no matter how much life changes? 🫶🏻',
+      'If we could create one completely new memory together someday, what would you want it to be? ✨',
+      'When you imagine us looking back on this birthday years from now, what do you hope we remember most? 🎂🥹',
+      'If you could tell me one honest thing about what I mean to you, without worrying about being shy, what would you say? ❤️'
+    ]
+  }
 ];
-let answers={};let pageIndex=0;let audioCtx=null;let noAttempts=0;const noTexts=["No, never 💔","Think of it... 🥺","Why? 😭","Are you sure? 🥹","Please don\'t... ❤️","Really? 😭","One more thought? 🥺","Wait... 💔","Still no? 🥹","Think again... ❤️"];
+
+let answers={};
+let pageIndex=0;
+let audioCtx=null;
+let noAttempts=0;
+let usingMp3=false;
+
+const noTexts=["No, never 💔","Think of it... 🥺","Why? 😭","Are you sure? 🥹","Please don't... ❤️","Really? 😭","One more thought? 🥺","Wait... 💔","Still no? 🥹","Think again... ❤️"];
 const $=id=>document.getElementById(id);
-function makeStars(){for(let i=0;i<65;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';$('stars').appendChild(s)}for(let i=0;i<18;i++){let p=document.createElement('span');p.className='petal';p.textContent=['🌸','💗','✨'][i%3];p.style.left=Math.random()*100+'%';p.style.animationDuration=(7+Math.random()*8)+'s';p.style.animationDelay=(-Math.random()*12)+'s';$('petals').appendChild(p)}}
+
+try{answers=JSON.parse(localStorage.getItem('birthday_answers_working')||'{}')||{};}catch(e){answers={};}
+
+function makeStars(){
+  for(let i=0;i<65;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';$('stars').appendChild(s)}
+  for(let i=0;i<18;i++){let p=document.createElement('span');p.className='petal';p.textContent=['🌸','💗','✨'][i%3];p.style.left=Math.random()*100+'%';p.style.animationDuration=(7+Math.random()*8)+'s';p.style.animationDelay=(-Math.random()*12)+'s';$('petals').appendChild(p)}
+}
+
 function indiaNow(){
   const now=new Date();
   const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(now);
-  const o={}; parts.forEach(p=>{if(p.type!=='literal')o[p.type]=p.value});
-  return o;
+  const o={};parts.forEach(p=>{if(p.type!=='literal')o[p.type]=p.value});return o;
 }
+
 function clock(){
   const d=indiaNow();
-  let h=Number(d.hour); const ampm=h>=12?'PM':'AM'; h=h%12||12;
+  let h=Number(d.hour);const ampm=h>=12?'PM':'AM';h=h%12||12;
   $('clock').textContent=String(h).padStart(2,'0')+':'+d.minute+':'+d.second+' '+ampm;
   const names=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   const dt=new Date(Date.UTC(Number(d.year),Number(d.month)-1,Number(d.day)));
   $('today').textContent=names[dt.getUTCDay()]+', '+new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(dt);
 }
+
 setInterval(clock,1000);clock();makeStars();
-function show(id,push=true){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$('questions').classList.remove('active');$(id).classList.add('active');$(id).scrollTop=0;document.body.style.overflow='hidden';if(push){history.pushState({birthdaySite:true,id:id,page:pageIndex},'',location.href.split('#')[0]+'#'+id+(id==='questions'?'-'+pageIndex:''))}}
-function restoreHistory(){let st=history.state;if(!st||!st.birthdaySite){history.replaceState({birthdaySite:true,id:'lock',page:0},'',location.href.split('#')[0]+'#lock')}else{pageIndex=st.page||0;if(st.id==='questions'){renderPage();show('questions',false)}else if($(st.id)){show(st.id,false)}}}
-history.replaceState({birthdaySite:true,id:'lock',page:0},'',location.href.split('#')[0]+'#lock');
-window.addEventListener('popstate',e=>{let st=e.state;if(!st||!st.birthdaySite){history.pushState({birthdaySite:true,id:'lock',page:0},'',location.href.split('#')[0]+'#lock');return}pageIndex=st.page||0;if(st.id==='questions'){renderPage();show('questions',false)}else if($(st.id)){show(st.id,false)}});
-async function unlock(e){
-  if(e)e.preventDefault();
-  const raw=$('password').value.trim();
+
+function show(id,push=true){
+  const target=$(id);if(!target)return;
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  $('questions').classList.remove('active');
+  target.classList.add('active');
+  target.scrollTop=0;
+  document.body.style.overflow='hidden';
+  if(push){try{history.pushState({birthdaySite:true,id:id,page:pageIndex},'',location.href.split('#')[0]+'#'+id+(id==='questions'?'-'+pageIndex:''))}catch(e){}}
+}
+
+function restoreHistory(){
+  let st=history.state;
+  if(!st||!st.birthdaySite){try{history.replaceState({birthdaySite:true,id:'lock',page:0},'',location.href.split('#')[0]+'#lock');}catch(e){}}
+  else{pageIndex=st.page||0;if(st.id==='questions'){renderPage();show('questions',false)}else if($(st.id)){show(st.id,false)}}
+}
+try{history.replaceState({birthdaySite:true,id:'lock',page:0},'',location.href.split('#')[0]+'#lock');}catch(e){}
+restoreHistory();
+
+window.addEventListener('popstate',e=>{
+  let st=e.state;
+  if(!st||!st.birthdaySite){try{history.pushState({birthdaySite:true,id:'lock',page:0},'',location.href.split('#')[0]+'#lock');}catch(e){}return}
+  pageIndex=st.page||0;
+  if(st.id==='questions'){renderPage();show('questions',false)}
+  else if($(st.id)){show(st.id,false)}
+});
+
+function doUnlock(){
+  const raw=($('password').value||'').trim();
   const v=raw.replace(/[^0-9]/g,'');
-  if(v==='19082026'){
-    try{
-      const r=await fetch('/api/unlock',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:raw})});
-      if(!r.ok)throw new Error('unlock failed');
-    }catch(err){
-      $('error').textContent='Please open the website from its online link first. ❤️';
-      return;
+  if(v===PASSWORD){
+    if(!IS_FILE){
+      fetch('/api/unlock',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:raw})}).catch(()=>{});
     }
     $('error').textContent='';
-    show('world');
     $('password').value='';
+    show('world');
   }else{
-    $('lockCard').classList.remove('shake'); void $('lockCard').offsetWidth; $('lockCard').classList.add('shake');
+    $('lockCard').classList.remove('shake');
+    void $('lockCard').offsetWidth;
+    $('lockCard').classList.add('shake');
     $('error').textContent="Hmm... that's not the secret date 🌹";
-    $('password').value=''; $('password').focus();
+    $('password').value='';
+    $('password').focus();
   }
 }
-$('unlockForm').addEventListener('submit',unlock);
-function startMusic(){try{if(audioCtx)return;audioCtx=new (window.AudioContext||window.webkitAudioContext)();let master=audioCtx.createGain();master.gain.value=.028;master.connect(audioCtx.destination);const melody=[261.63,261.63,293.66,261.63,349.23,329.63,261.63,261.63,293.66,261.63,392,349.23,261.63,261.63,523.25,440,349.23,329.63,293.66,466.16,466.16,440,349.23,392,349.23];const play=()=>{let t=audioCtx.currentTime;melody.forEach((n,i)=>{let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=n;let st=t+i*.42;g.gain.setValueAtTime(.0001,st);g.gain.linearRampToValueAtTime(.45,st+.04);g.gain.exponentialRampToValueAtTime(.0001,st+.34);o.connect(g);g.connect(master);o.start(st);o.stop(st+.36)});setTimeout(()=>{if(audioCtx)play()},melody.length*420-20)};play()}catch(e){}}
-$('openHeart').onclick=()=>{let h=$('openHeart');h.style.transform='rotate(-45deg) scale(1.35)';startMusic();setTimeout(()=>{$('intro').style.display='block';$('intro').scrollIntoView({behavior:'smooth',block:'start'})},650)};
-function renderPage(){let p=pages[pageIndex],root=$('questions');root.innerHTML=`<section class="page"><div class="page-inner"><div class="page-head"><div class="page-kicker">💌 A Little Note</div><h1 class="page-title">${p.message.split('\n')[0]}</h1></div><div class="note" style="white-space:pre-line">${p.message}</div><div class="note"><b>Please answer all the questions before continuing. ❤️</b><br>You won't be able to move to the next page until all your answers are given. 🫶🏻<br>Take your time… I genuinely want to know what's in your heart. 🌍❤️</div><div class="progress"><i style="width:${((pageIndex)/pages.length)*100}%"></i></div>${p.qs.map((q,i)=>`<div class="qcard"><label>${i+1}. ${q}</label><textarea class="answer" data-i="${i}" placeholder="Write what's in your heart… ❤️">${answers[pageIndex+'-'+i]||''}</textarea></div>`).join('')}<div class="success" id="success">All five answers are ready. Now tap <b>“Sending to my husband ❤️”</b>.</div><button class="send" id="send" disabled>Sending to my husband ❤️</button><div class="small">You must tap the button after answering all 5 questions.</div></div></section>`;document.querySelectorAll('.answer').forEach(t=>t.addEventListener('input',()=>{answers[pageIndex+'-'+t.dataset.i]=t.value;check()}));check();$('send').onclick=submitPage}
-function check(){let ok=pages[pageIndex].qs.every((_,i)=>(answers[pageIndex+'-'+i]||'').trim());$('send').disabled=!ok;if(ok)$('success').style.display='block'}
-async function submitPage(){check();if($('send').disabled)return;$('send').disabled=true;$('send').textContent='Sending… ❤️';const sent=await sendAnswers(pageIndex);if(!sent){$('send').disabled=false;$('send').textContent='Sending to my husband ❤️';$('success').style.display='block';$('success').innerHTML='I couldn’t send your answers yet. Please tap the button again. ❤️';return}if(pageIndex<pages.length-1){pageIndex++;renderPage();const q=$('questions');q.scrollTop=0;q.scrollTo({top:0,left:0,behavior:'instant'});window.scrollTo(0,0)}else{show('final');$('final').scrollTop=0}}
-async function sendAnswers(pi){let p=pages[pi];let text=`Birthday answers — My Love\n\n${p.message}\n\n`;p.qs.forEach((q,i)=>text+=`${i+1}. ${q}\nAnswer: ${answers[pi+'-'+i]||''}\n\n`);let all=localStorage.getItem('birthday_answers')||'';all+=text;localStorage.setItem('birthday_answers',all);try{let r=await fetch('/api/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'questions',page:pi+1,message:p.message,answers:p.qs.map((q,i)=>({question:q,answer:answers[pi+'-'+i]||''}))})});if(!r.ok)throw new Error('send failed');return true}catch(e){console.warn('Email delivery unavailable:',e);return false}}
-$('toQ1').onclick=()=>{pageIndex=0;renderPage();show('questions')};
-document.querySelectorAll('.choice.yes').forEach(b=>b.onclick=()=>{let choice=b.dataset.choice;localStorage.setItem('final_choice',choice);$('choices').style.display='grid';$('finalMessage').style.display='block';$('finalQuestion').style.display='block';$('replay').style.display='inline-block';$('finalStatus').textContent='Your answer was recorded: '+choice+' ❤️';$('final').scrollTo({top:0,left:0,behavior:'instant'});requestAnimationFrame(()=>requestAnimationFrame(()=>{$('final').scrollTo({top:0,left:0,behavior:'instant'});$('final-inner')?.focus?.()}));sendFinal(choice)});
-async function sendFinal(choice){let body=(localStorage.getItem('birthday_answers')||'')+`\n\nFINAL CHOICE: ${choice}`;localStorage.setItem('birthday_answers',body);try{let r=await fetch('/api/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'final',answers:body,choice,no_attempts:noAttempts})});$('finalStatus').textContent=r.ok?'Your answer was sent to me. ❤️':'I couldn’t send your answer yet. Please try again. ❤️'}catch(e){$('finalStatus').textContent='I couldn’t send your answer yet. Please try again. ❤️'}}
-$('noBtn').addEventListener('mouseenter',moveNo);$('noBtn').addEventListener('touchstart',e=>{e.preventDefault();moveNo()});function moveNo(){noAttempts++;let b=$('noBtn');b.textContent=noTexts[(noAttempts-1)%noTexts.length];b.style.position='fixed';b.style.left=(10+Math.random()*75)+'vw';b.style.top=(15+Math.random()*70)+'vh'}
-$('replay').onclick=()=>{pageIndex=0;answers={};$('finalMessage').style.display='block';$('finalQuestion').style.display='block';$('replay').style.display='none';$('choices').style.display='grid';$('finalStatus').textContent='';show('world')};
-/* Optional photo loading: double-click either photo to select an image. */
-['photoA','photoB'].forEach(id=>{let img=$(id);img.src='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="100%" height="100%" fill="#21152d"/><text x="50%" y="50%" fill="#fff" font-size="22" text-anchor="middle" dominant-baseline="middle">❤️</text></svg>`);img.title='Optional photo placeholder';img.ondblclick=()=>{let input=document.createElement('input');input.type='file';input.accept='image/*';input.onchange=()=>{let f=input.files[0];if(f)img.src=URL.createObjectURL(f)};input.click()}});
-/* Device tilt parallax when available */
-window.addEventListener('deviceorientation',e=>{let x=Math.max(-20,Math.min(20,e.gamma||0));let y=Math.max(-20,Math.min(20,e.beta||0));$('scene').style.transform=`rotateY(${x/8}deg) rotateX(${-y/14}deg)`});
+
+document.getElementById('unlock').addEventListener('click',function(e){e.preventDefault();doUnlock();});
+document.getElementById('unlockForm').addEventListener('submit',function(e){e.preventDefault();doUnlock();});
+document.getElementById('password').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();doUnlock();}});
+
+function startMusic(){
+  const song=$('song');
+  if(!usingMp3 && song){
+    const p=song.play();
+    if(p&&p.then){
+      p.then(()=>{usingMp3=true;}).catch(()=>{startGeneratedMusic();});
+      setTimeout(()=>{if(!usingMp3&&!audioCtx)startGeneratedMusic();},1200);
+      return;
+    }
+  }
+  if(!usingMp3)startGeneratedMusic();
+}
+
+function startGeneratedMusic(){
+  try{
+    if(audioCtx)return;
+    audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+    const master=audioCtx.createGain();master.gain.value=.028;master.connect(audioCtx.destination);
+    const melody=[261.63,261.63,293.66,261.63,349.23,329.63,261.63,261.63,293.66,261.63,392,349.23,261.63,261.63,523.25,440,349.23,329.63,293.66,466.16,466.16,440,349.23,392,349.23];
+    const play=()=>{
+      const t=audioCtx.currentTime;
+      melody.forEach((n,i)=>{
+        const o=audioCtx.createOscillator();const g=audioCtx.createGain();
+        o.type='sine';o.frequency.value=n;
+        const st=t+i*.42;
+        g.gain.setValueAtTime(.0001,st);
+        g.gain.linearRampToValueAtTime(.45,st+.04);
+        g.gain.exponentialRampToValueAtTime(.0001,st+.34);
+        o.connect(g);g.connect(master);o.start(st);o.stop(st+.36);
+      });
+      setTimeout(()=>{if(audioCtx)play();},melody.length*420-20);
+    };
+    play();
+  }catch(e){}
+}
+
+$('openHeart').addEventListener('click',function(){
+  const h=$('openHeart');
+  h.style.transform='rotate(-45deg) scale(1.35)';
+  startMusic();
+  if(typeof DeviceOrientationEvent!=='undefined'&&typeof DeviceOrientationEvent.requestPermission==='function'){
+    DeviceOrientationEvent.requestPermission().catch(()=>{});
+  }
+  setTimeout(()=>{
+    $('intro').style.display='block';
+    $('intro').scrollIntoView({behavior:'smooth',block:'start'});
+  },650);
+});
+
+function renderPage(){
+  const p=pages[pageIndex];const root=$('questions');
+  root.innerHTML='<section class="page"><div class="page-inner"><div class="page-head"><div class="page-kicker">💌 A Little Note</div><h1 class="page-title">'+p.message.split('\n')[0]+'</h1></div><div class="note" style="white-space:pre-line">'+p.message+'</div><div class="note"><b>Please answer all the questions before continuing. ❤️</b><br>You won\'t be able to move to the next page until all your answers are given. 🫶🏻<br>Take your time… I genuinely want to know what\'s in your heart. 🌍❤️</div><div class="progress"><i style="width:'+((pageIndex)/pages.length)*100+'%"></i></div>'+p.qs.map((q,i)=>'<div class="qcard"><label>'+(i+1)+'. '+q+'</label><textarea class="answer" data-i="'+i+'" placeholder="Write what\'s in your heart… ❤️">'+(answers[pageIndex+'-'+i]||'')+'</textarea></div>').join('')+'<div class="success" id="success">All five answers are ready. Now tap <b>"Sending to my husband ❤️"</b>.</div><button class="send" id="send" disabled>Sending to my husband ❤️</button><div class="small">You must tap the button after answering all 5 questions.</div></div></section>';
+  document.querySelectorAll('.answer').forEach(t=>t.addEventListener('input',()=>{
+    answers[pageIndex+'-'+t.dataset.i]=t.value;
+    try{localStorage.setItem('birthday_answers_working',JSON.stringify(answers));}catch(e){}
+    check();
+  }));
+  check();
+  $('send').onclick=submitPage;
+}
+
+function check(){
+  const ok=pages[pageIndex].qs.every((_,i)=>(answers[pageIndex+'-'+i]||'').trim());
+  $('send').disabled=!ok;
+  if(ok)$('success').style.display='block';
+  else $('success').style.display='none';
+}
+
+function submitPage(){
+  check();if($('send').disabled)return;
+  $('send').disabled=true;$('send').textContent='Saved ❤️';
+  saveAnswers(pageIndex);
+  if(pageIndex<pages.length-1){pageIndex++;renderPage();$('questions').scrollTop=0;}
+  else{show('final');$('final').scrollTop=0;}
+}
+
+function saveAnswers(pi){
+  const p=pages[pi];let all=[];
+  try{all=JSON.parse(localStorage.getItem('birthday_answers_json')||'[]');}catch(e){all=[];}
+  all=all.filter(x=>x.page!==(pi+1));
+  all.push({page:pi+1,message:p.message,answers:p.qs.map((q,i)=>({question:q,answer:answers[pi+'-'+i]||''}))});
+  all.sort((a,b)=>a.page-b.page);
+  localStorage.setItem('birthday_answers_json',JSON.stringify(all));
+}
+
+$('toQ1').addEventListener('click',function(){pageIndex=0;renderPage();show('questions');});
+
+function moveNo(){
+  noAttempts++;
+  const b=$('noBtn');
+  b.textContent=noTexts[(noAttempts-1)%noTexts.length];
+  b.style.position='fixed';
+  b.style.left=(10+Math.random()*75)+'vw';
+  b.style.top=(15+Math.random()*70)+'vh';
+}
+$('noBtn').addEventListener('mouseenter',moveNo);
+$('noBtn').addEventListener('touchstart',function(e){e.preventDefault();moveNo();});
+$('noBtn').addEventListener('click',function(e){e.preventDefault();moveNo();});
+
+function resetNoBtn(){
+  const b=$('noBtn');
+  b.style.position='';b.style.left='';b.style.top='';
+  b.textContent='No, never 💔';
+}
+
+document.querySelectorAll('.choice.yes').forEach(function(b){
+  b.addEventListener('click',function(){
+    const choice=b.dataset.choice;
+    localStorage.setItem('final_choice',choice);
+    $('replay').style.display='inline-block';
+    $('finalStatus').textContent='Your answer was recorded: '+choice+' ❤️';
+    resetNoBtn();
+    sendFinal(choice);
+    setTimeout(function(){show('forever');requestAnimationFrame(function(){$('forever').scrollTop=0;});},650);
+  });
+});
+
+function sendFinal(choice){
+  const payload={type:'complete',answers:JSON.parse(localStorage.getItem('birthday_answers_json')||'[]'),choice:choice,no_attempts:noAttempts,completed_at:new Date().toISOString()};
+  if(IS_FILE){
+    $('finalStatus').textContent='Your answers are saved. ❤️';
+    return;
+  }
+  fetch('/api/complete',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){
+      if(r.ok)$('finalStatus').textContent='Everything has been sent to me. ❤️';
+      else $('finalStatus').textContent='Your answers are saved. ❤️';
+    })
+    .catch(function(){$('finalStatus').textContent='Your answers are saved. ❤️';});
+}
+
+function resetJourney(){
+  pageIndex=0;answers={};
+  try{localStorage.removeItem('birthday_answers_working');}catch(e){}
+  resetNoBtn();
+  $('replay').style.display='none';
+  $('finalStatus').textContent='';
+  $('choices').style.display='grid';
+  const fm=$('finalMessage');if(fm)fm.style.display='';
+  const fq=$('finalQuestion');if(fq)fq.style.display='';
+  const intro=$('intro');if(intro)intro.style.display='none';
+  const oh=$('openHeart');if(oh)oh.style.transform='';
+}
+$('replay').addEventListener('click',function(){resetJourney();show('world');});
+$('replayForever').addEventListener('click',function(){resetJourney();show('world');});
+
+const SVG_PH='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="100%" height="100%" fill="#21152d"/><text x="50%" y="50%" fill="#fff" font-size="60" text-anchor="middle" dominant-baseline="middle">❤️</text></svg>');
+
+function makePhotoTappable(imgEl,key){
+  if(!imgEl.getAttribute('src')) if(!imgEl.getAttribute('src')) imgEl.src=SVG_PH;
+  try{const s=localStorage.getItem(key);if(s)imgEl.src=s;}catch(e){}
+  imgEl.addEventListener('click',function(){
+    const i=document.createElement('input');i.type='file';i.accept='image/*';
+    i.onchange=function(){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=function(){imgEl.src=r.result;try{localStorage.setItem(key,r.result);}catch(e){}};r.readAsDataURL(f);};
+    i.click();
+  });
+}
+makePhotoTappable($('photoA'),'photo_photoA');
+makePhotoTappable($('photoB'),'photo_photoB');
+
+(function(){
+  const wrap=$('foreverPhoto');const ph=$('foreverPlaceholder');const key='photo_forever';
+  try{const s=localStorage.getItem(key);if(s){ph.style.backgroundImage='url('+s+')';ph.classList.add('has-img');}}catch(e){}
+  wrap.addEventListener('click',function(){
+    const i=document.createElement('input');i.type='file';i.accept='image/*';
+    i.onchange=function(){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=function(){ph.style.backgroundImage='url('+r.result+')';ph.classList.add('has-img');try{localStorage.setItem(key,r.result);}catch(e){}};r.readAsDataURL(f);};
+    i.click();
+  });
+})();
+
+const GAL_KEY='olw_gallery_photos_v1';
+const GAL_MAX=12;
+let galleryPhotos=[];
+try{galleryPhotos=JSON.parse(localStorage.getItem(GAL_KEY)||'[]')||[];}catch(e){galleryPhotos=[];}
+
+function saveGallery(){try{localStorage.setItem(GAL_KEY,JSON.stringify(galleryPhotos));}catch(e){}}
+
+function renderGallery(){
+  const grid=$('galleryGrid');grid.innerHTML='';
+  galleryPhotos.forEach(function(src,idx){
+    const d=document.createElement('div');
+    d.className='gslot has-img';
+    d.style.backgroundImage='url('+src+')';
+    d.innerHTML='<button class="del" data-i="'+idx+'">✕</button>';
+    d.addEventListener('click',function(e){
+      if(e.target.classList.contains('del')){e.stopPropagation();galleryPhotos.splice(idx,1);saveGallery();renderGallery();return;}
+      openLightbox(idx);
+    });
+    grid.appendChild(d);
+  });
+  if(galleryPhotos.length<GAL_MAX){
+    const add=document.createElement('div');
+    add.className='gslot';
+    add.innerHTML='<span class="plus">＋</span>';
+    add.addEventListener('click',function(){document.getElementById('galleryGridAdd').click();});
+    grid.appendChild(add);
+  }
+}
+
+function addPhotosFromInput(files){
+  const list=Array.from(files||[]);
+  const remaining=GAL_MAX-galleryPhotos.length;
+  list.slice(0,remaining).forEach(function(f){
+    const r=new FileReader();
+    r.onload=function(){galleryPhotos.push(r.result);saveGallery();renderGallery();};
+    r.readAsDataURL(f);
+  });
+}
+
+(function(){
+  const inp=document.createElement('input');
+  inp.type='file';inp.accept='image/*';inp.multiple=true;inp.id='galleryGridAdd';inp.style.display='none';
+  inp.onchange=function(){addPhotosFromInput(inp.files);inp.value='';};
+  document.body.appendChild(inp);
+})();
+
+$('addManyPhotos').addEventListener('click',function(){document.getElementById('galleryGridAdd').click();});
+
+let lbIndex=0;
+function openLightbox(i){
+  if(!galleryPhotos.length)return;
+  lbIndex=i;
+  $('lbImg').src=galleryPhotos[lbIndex];
+  $('lightbox').classList.add('active');
+}
+$('lbClose').addEventListener('click',function(){$('lightbox').classList.remove('active');});
+$('lbPrev').addEventListener('click',function(){if(!galleryPhotos.length)return;lbIndex=(lbIndex-1+galleryPhotos.length)%galleryPhotos.length;$('lbImg').src=galleryPhotos[lbIndex];});
+$('lbNext').addEventListener('click',function(){if(!galleryPhotos.length)return;lbIndex=(lbIndex+1)%galleryPhotos.length;$('lbImg').src=galleryPhotos[lbIndex];});
+$('lightbox').addEventListener('click',function(e){if(e.target.id==='lightbox')$('lightbox').classList.remove('active');});
+
+let slideshowTimer=null;
+$('slideshowBtn').addEventListener('click',function(){
+  if(galleryPhotos.length<1)return;
+  if(slideshowTimer){clearInterval(slideshowTimer);slideshowTimer=null;return;}
+  lbIndex=0;$('lbImg').src=galleryPhotos[0];$('lightbox').classList.add('active');
+  slideshowTimer=setInterval(function(){lbIndex=(lbIndex+1)%galleryPhotos.length;$('lbImg').src=galleryPhotos[lbIndex];},3000);
+});
+$('lbClose').addEventListener('click',function(){if(slideshowTimer){clearInterval(slideshowTimer);slideshowTimer=null;}});
+
+renderGallery();
+
+$('toGalleryFromForever').addEventListener('click',function(){show('gallery');});
+$('backFromGallery').addEventListener('click',function(){
+  const prev=history.state&&history.state.id;
+  if(prev==='forever')show('forever');else show('world');
+});
+
+window.addEventListener('deviceorientation',function(e){
+  const x=Math.max(-20,Math.min(20,e.gamma||0));
+  const y=Math.max(-20,Math.min(20,e.beta||0));
+  const s=$('scene');if(s)s.style.transform='rotateY('+(x/8)+'deg) rotateX('+(-y/14)+'deg)';
+});
 </script>
 </body>
 </html>
+
+<script>
+(function(){
+var old=document.getElementById('hrv');if(old)old.remove();
+var r=document.createElement('div');
+r.id='hrv';
+r.style.cssText='display:none;text-align:center;margin:30px auto;padding:0 20px;';
+r.innerHTML='<div style="display:flex;justify-content:center;gap:14px"><img src="her-photo.jpg" class="rph"><img src="her-photo2.jpg" class="rph" onerror="this.src=\'her-photo.jpg\'"></div><p style="font-family:Dancing Script,cursive;font-size:26px;color:#ffd0e0;margin-top:22px;text-shadow:0 0 20px #ff477e">this is what is inside my heart 💖❤️</p>';
+var st=document.createElement('style');
+st.textContent='.rph{width:min(38vw,180px);height:min(38vw,180px);object-fit:cover;border-radius:50%;border:4px solid #ff8fb5;box-shadow:0 0 40px #ff477e99,0 0 80px #8d58ff44;opacity:0;transform:scale(.2) translateY(60px);transition:opacity .9s cubic-bezier(.34,1.56,.64,1),transform .9s cubic-bezier(.34,1.56,.64,1);}.rph.s{opacity:1;transform:scale(1) translateY(0);}';
+document.head.appendChild(st);
+var i=document.getElementById('intro');
+var s=document.getElementById('scene');
+if(s&&s.parentNode){s.parentNode.insertBefore(r,i||s.nextSibling);}
+var h=document.getElementById('openHeart');
+if(h){h.addEventListener('click',function(){
+setTimeout(function(){
+r.style.display='block';
+r.scrollIntoView({behavior:'smooth',block:'center'});
+setTimeout(function(){
+var p=r.querySelectorAll('.rph');
+p[0].classList.add('s');
+setTimeout(function(){p[1].classList.add('s');},400);
+},120);
+setTimeout(function(){if(i){i.style.display='block';i.scrollIntoView({behavior:'smooth',block:'start'});}},3300);
+},700);});}
+})();
+</script>
