@@ -19,8 +19,7 @@ def send_email(subject, body):
     msg['Subject'] = subject
     msg.attach(MIMEText(body, 'plain', 'utf-8'))
     try:
-        with smtplib.SMTP('smtp.gmail.com', 587, timeout=20) as s:
-            s.starttls()
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=20) as s:
             s.login(GMAIL_USER, GMAIL_APP_PW)
             s.send_message(msg)
         return True
