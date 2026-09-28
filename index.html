@@ -280,26 +280,9 @@ button,input,textarea{font:inherit}
       <p><b>Happy 16th Birthday, Bangaram. 🎂🌹❤️</b></p>
       <p><b>You are my world. 🌍❤️</b></p>
     </div>
-    <button class="ghost-btn" id="toGalleryFromForever">📸 Our Memory Gallery</button>
     <button class="continue" id="replayForever">Replay Our Birthday Journey ❤️</button>
   </div>
 </section>
-
-<section id="gallery" class="screen">
-  <div class="gallery-inner">
-    <div class="gallery-kicker">📸 OUR MEMORIES</div>
-    <h1 class="gallery-title">Little Moments, Forever Us</h1>
-    <p class="gallery-sub">every photo is a piece of my heart ❤️</p>
-    <div class="gallery-grid" id="galleryGrid"></div>
-    <div class="gallery-actions">
-      <button class="ghost-btn" id="addManyPhotos">➕ Add photos</button>
-      <button class="ghost-btn" id="slideshowBtn">▶️ Slideshow</button>
-      <button class="ghost-btn" id="backFromGallery">← Back</button>
-    </div>
-    <p class="small" style="margin-top:18px;opacity:.55">Tap a photo to view full-screen. Tap ✕ to remove.</p>
-  </div>
-</section>
-
 <div id="lightbox">
   <button class="lb-close" id="lbClose">✕</button>
   <button class="lb-nav lb-prev" id="lbPrev">‹</button>
@@ -711,7 +694,6 @@ $('lbClose').addEventListener('click',function(){if(slideshowTimer){clearInterva
 
 renderGallery();
 
-$('toGalleryFromForever').addEventListener('click',function(){show('gallery');});
 $('backFromGallery').addEventListener('click',function(){
   const prev=history.state&&history.state.id;
   if(prev==='forever')show('forever');else show('world');
