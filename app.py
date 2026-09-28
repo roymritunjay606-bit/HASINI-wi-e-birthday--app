@@ -1,27 +1,30 @@
+
 import os
-import smtplib
+import resend
 from datetime import datetime
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from flask import Flask, request, jsonify, send_from_directory
 
 app = Flask(__name__, static_folder='.', static_url_path='')
-GMAIL_USER   = os.environ.get('GMAIL_USER', '')
-GMAIL_APP_PW = os.environ.get('GMAIL_APP_PW', '')
-TO_EMAIL     = os.environ.get('TO_EMAIL', GMAIL_USER)
-SECRET_WORD  = os.environ.get('SECRET_WORD', '19082026')
+
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
+FROM_EMAIL     = os.environ.get('FROM_EMAIL', 'onboarding@resend.dev')
+TO_EMAIL       = os.environ.get('TO_EMAIL', '')
+SECRET_WORD    = os.environ.get('SECRET_WORD', '19082026')
+
+resend.api_key = RESEND_API_KEY
 
 def send_email(subject, body):
-    if not (GMAIL_USER and GMAIL_APP_PW and TO_EMAIL): return False
-    msg = MIMEMultipart()
-    msg['From'] = GMAIL_USER
-    msg['To'] = TO_EMAIL
-    msg['Subject'] = subject
-    msg.attach(MIMEText(body, 'plain', 'utf-8'))
+    if not (RESEND_API_KEY and TO_EMAIL):
+        print('[email skipped] missing env vars')
+        return False
     try:
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=20) as s:
-            s.login(GMAIL_USER, GMAIL_APP_PW)
-            s.send_message(msg)
+        resend.Emails.send({
+            "from": FROM_EMAIL,
+            "to": TO_EMAIL,
+            "subject": subject,
+            "text": body
+        })
+        print('[email sent]', subject)
         return True
     except Exception as e:
         print('[email error]', e)
